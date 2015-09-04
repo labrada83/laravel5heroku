@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'url' => 'http://flyerproject.dev/',
+    'url' => 'https://flyerproject.herokuapp.com/',
 
     /*
     |--------------------------------------------------------------------------
