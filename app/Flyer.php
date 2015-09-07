@@ -10,13 +10,27 @@ class Flyer extends Model
 		'street','city','state', 'country','zip','price', 'description'
 	];
 
-	public function scopelocatedAt($query, $zip, $street){
+	
+	public static function locatedAt($zip, $street){
+
 		$street = str_replace('-', ' ', $street);
-		return $query->where(compact('zip','street'));
+		return static::where(compact('zip','street'))->first();
 	}
+
+/*
+	public function getPriceAttribute($price){
+
+		return '$'.number_format($price);
+	}*/
+
+	public function addPhoto(Photo $photo)
+	{
+		return $this->photos()->save($photo);
+	}
+
 
     public function photos(){
 
-    	return $this->hasMany('App\Photo');
+    	return $this->hasMany('FlyerProject\Photo');
     }
 }

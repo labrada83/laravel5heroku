@@ -4,8 +4,10 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title></title>
-	<link rel="stylesheet" href="/css/app.css">
   <link rel="stylesheet" href="/css/libs.css">
+  <link rel="stylesheet" href="/css/app.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/dropzone.css">
+  
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">

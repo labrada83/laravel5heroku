@@ -2,7 +2,7 @@
 @extends('layout')
 
 @section('content')
-<div class="row">
+
 	<h1>Selling your home?</h1>
 	<hr>
 	<form enctype="multipart/form-data" action="/flyers" method="POST" class="col-md-6">
@@ -18,5 +18,5 @@
 			</div>
 		@endif
 	</form>
-</div>
+
 @stop

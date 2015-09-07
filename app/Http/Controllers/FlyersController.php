@@ -3,6 +3,7 @@
 namespace FlyerProject\Http\Controllers;
 
 use FlyerProject\Flyer;
+use FlyerProject\Photo;
 use Illuminate\Http\Request;
 use FlyerProject\Http\Requests\FlyerRequest;
 use FlyerProject\Http\Controllers\Controller;
@@ -51,8 +52,26 @@ class FlyersController extends Controller
      */
     public function show($zip, $street)
     {        
-        $flyer = Flyer::locatedAt($zip, $street)->first();
+        $flyer = Flyer::locatedAt($zip, $street);
         return view('flyers.show', compact('flyer'));
+    }
+
+
+    /**
+     * Add photo
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function addPhoto($zip, $street, Request $request)
+    {
+        $this->validate($request,[
+            'file'=>'required|mimes:jpg,jpeg,png,bmp'
+        ]);
+
+        $photo = Photo::fromForm($request->file('file'));
+
+        Flyer::locatedAt($zip, $street)->addPhoto($photo);
     }
 
     /**
