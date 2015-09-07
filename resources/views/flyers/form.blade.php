@@ -61,5 +61,4 @@
 			<button type="submit" class="btn btn-primary">Create Flyer</button>	
 		</div>
 	</div>	
-	lorem
 </div>
